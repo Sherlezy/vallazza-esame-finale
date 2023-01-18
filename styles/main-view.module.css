@@ -1,0 +1,83 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark_desaturated_blue);
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.land {
+  width: 100%;
+  position: absolute;
+  height: 25%;
+  bottom: 0;
+  background-image: url('../public/pattern-hills.svg');
+  background-size: cover;
+}
+
+.sky {
+  width: 100%;
+  position: absolute;
+  height: 75%;
+  top: 0;
+  background-image: url('../public/bg-stars.svg');
+  background-size: cover;
+}
+
+.title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 100%;
+  height: 4rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  padding: 0;
+}
+
+.containerSegments {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.containerSegment {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--grayish_blue);
+  letter-spacing: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .title {
+    padding: 0 1rem;
+    height: 3rem;
+    line-height: 1.3rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .containerSegments {
+    column-gap: 1rem;
+  }
+
+  .subtitle {
+    font-size: 0.5rem;
+    letter-spacing: 0.1rem;
+  }
+}

@@ -1,0 +1,119 @@
+.flipCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  box-shadow: 0 5px 5px #000;
+  border-radius: 10px;
+  position: relative;
+}
+
+.upperPart,
+.lowerPart,
+.upperPartFlip,
+.lowerPartFlip {
+  font-size: 5.5rem;
+  overflow: hidden;
+  width: 148px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+}
+
+.upperPart,
+.upperPartFlip {
+  color: #c5557a;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding-top: 11px;
+  background-image: url('../public/Upper.svg');
+  border-bottom: 1px solid rgb(44, 44, 68, 0.1);
+}
+
+.lowerPart,
+.lowerPartFlip {
+  color: #fb5d85;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  align-items: flex-end;
+  padding-bottom: 16.6px;
+  background-image: url('../public/Lower.svg');
+}
+
+.upperPartFlip {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  content: '43';
+  animation: flip-top 250ms ease-in;
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+}
+
+.upperPartRepeatFlipStop {
+  animation: none;
+}
+
+.upperPartRepeatFlipStart {
+  animation: flip-top 250ms ease-in;
+}
+
+@keyframes flip-top {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+.lowerPartFlip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  content: '43';
+  animation: flip-bottom 250ms ease-out 250ms;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+
+.lowerPartRepeatFlipStop {
+  animation: none;
+}
+
+.lowerPartRepeatFlipStart {
+  animation: flip-bottom 250ms ease-out 250ms;
+}
+
+/* prettier-ignore */
+@keyframes flip-bottom {
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+
+@media (max-width: 600px) {
+  .flipCard {
+    border-radius: 5px;
+  }
+
+  .upperPart,
+  .lowerPart,
+  .upperPartFlip,
+  .lowerPartFlip {
+    font-size: 2rem;
+    width: 66px;
+    height: 32px;
+  }
+
+  .upperPart,
+  .upperPartFlip {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-top: 10px;
+  }
+
+  .lowerPart,
+  .lowerPartFlip {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-bottom: 11px;
+  }
+}
