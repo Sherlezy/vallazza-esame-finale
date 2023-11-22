@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from "react";
 
 const TimerCountdown = createContext({
   secunds: 0,
@@ -50,8 +50,8 @@ export function TimerCountdownProvider(props) {
       return { seconds, minutes, hours, days };
     }
 
-    const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 9);
+    const endDate = new Date("2023-11-24T15:30:00");
+    endDate.setDate(endDate.getDate());
     let previousTimeBetweenDates;
     const interval = setInterval(() => {
       const currentDate = new Date();

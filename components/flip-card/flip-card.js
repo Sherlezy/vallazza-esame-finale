@@ -1,18 +1,18 @@
-import { useRef, useState, useEffect, Fragment, useContext } from 'react';
-import classNames from 'classnames';
+import { useRef, useState, useEffect, Fragment, useContext } from "react";
+import classNames from "classnames";
 
-import styles from '../../styles/flip-card.module.css';
-import TimerContext from '../../store/timer-context';
+import styles from "../../styles/flip-card.module.css";
+import TimerContext from "../../store/timer-context";
 
 function FlipCard({ label }) {
   const timerCtx = useContext(TimerContext);
 
   const [startNumber, setStartNumber] = useState(
-    label === 'seconds'
+    label === "seconds"
       ? timerCtx.secunds
-      : label === 'minutes'
+      : label === "minutes"
       ? timerCtx.minutes
-      : label === 'hours'
+      : label === "hours"
       ? timerCtx.hours
       : timerCtx.days
   );
@@ -92,11 +92,11 @@ function FlipCard({ label }) {
 
   useEffect(() => {
     const newNumber =
-      label === 'seconds'
+      label === "seconds"
         ? timerCtx?.seconds
-        : label === 'minutes'
+        : label === "minutes"
         ? timerCtx.minutes
-        : label === 'hours'
+        : label === "hours"
         ? timerCtx.hours
         : timerCtx.days;
     if (newNumber !== startNumber) {
@@ -129,7 +129,7 @@ function FlipCard({ label }) {
 
   function padding(num, size) {
     num = num.toString();
-    while (num.length < size) num = '0' + num;
+    while (num.length < size) num = "0" + num;
     return num;
   }
 

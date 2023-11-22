@@ -15,7 +15,7 @@
   position: absolute;
   height: 25%;
   bottom: 0;
-  background-image: url('../public/pattern-hills.svg');
+  background-image: url("../public/bg-stars.svg");
   background-size: cover;
 }
 
@@ -24,7 +24,7 @@
   position: absolute;
   height: 75%;
   top: 0;
-  background-image: url('../public/bg-stars.svg');
+  background-image: url("../public/bg-stars.svg");
   background-size: cover;
 }
 
@@ -40,8 +40,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white);
+  color: white;
   padding: 0;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .containerSegments {
